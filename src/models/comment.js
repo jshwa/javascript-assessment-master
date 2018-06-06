@@ -12,7 +12,11 @@ class Comment {
          id: this.id,
          commentContent: this.commentContent, 
       })
-      return Image.all.splice(imageId, 1, null)
+      return Image.all[imageId]
+   }
+
+   commentEl() {
+      return `<li id="comment-${this.id}">${this.commentContent}</li>`
    }
 
 }
