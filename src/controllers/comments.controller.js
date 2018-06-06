@@ -13,9 +13,9 @@ class CommentsController {
     this.$addCommentForm.on('submit', function(e){
        e.preventDefault();
        let id = $(this).data().id;
-       let comment = $(`#comment-description-${id}`).val();
-       console.log(id);
-       console.log(comment);
+       let commentContent = $(`#comment-description-${id}`).val();
+       let comment = new Comment(id, commentContent);
+       console.log(Comment.all)
     })
   }
 }
