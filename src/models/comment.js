@@ -1,11 +1,18 @@
 // create Comment class here
-
 class Comment {
-   constructor(id, commentContent) {
-      this.id = id;
-      this.image = $(`#image-${id}`);
+   constructor(imageId, commentContent) {
+      this.id = this.constructor.all.length;
       this.commentContent = commentContent;
+      this.image = this.findImage(imageId);
       this.constructor.all.push(this);
+   }
+
+   findImage(imageId) {
+      Image.all[imageId].comments.push({
+         id: this.id,
+         commentContent: this.commentContent, 
+      })
+      return Image.all.splice(imageId, 1, null)
    }
 
 }
