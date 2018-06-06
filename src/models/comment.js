@@ -1,3 +1,4 @@
+'use strict';
 // create Comment class here
 class Comment {
    constructor(imageId, commentContent) {
@@ -16,7 +17,7 @@ class Comment {
    }
 
    commentEl() {
-      return `<li id="comment-${this.id}">${this.commentContent}</li>`
+      return `<li id="comment-id-${this.id}">${this.commentContent}</li>`
    }
 
 }
